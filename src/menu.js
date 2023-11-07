@@ -5,8 +5,8 @@ function createMenu() {
     const logo = document.createElement("logo");
     logo.src = "logo.webp";
     logo.alt = "IBA (International Business Academy) logo";
-    logo.width = "50";
-    logo.height = "50";
+    logo.width = "195";
+    logo.height = "119";
     const input = document.createElement("input");
     input.type = "text";
     input.placeholder = "Search...";
