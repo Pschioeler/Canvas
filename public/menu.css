@@ -35,10 +35,12 @@ header nav input {
 }
 
 #sideMenu {
-    color: white;
-    font-size: 16px;
+    position: fixed;
+    left: 0;
     width: min-content;
     height: 100vh;
+    color: white;
+    font-size: 16px;
     padding: 0.5em 0.8em;
     border-right: 2px solid black;
 }
