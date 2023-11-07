@@ -23,7 +23,7 @@
 a {text-decoration : none; color : var(--primary-color);}
 
 body{
-    background-color:   var(--bg-color) ;
+    background-color:  var(--bg-color) ;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,7 +65,7 @@ h1,h2,h3,h4,h5,h6 {
 #classes > :last-child {
     border-radius: 0 0 20px 0;
 }
-#contentWrapper {
+.contentWrapper {
     width: 85%;
     margin-top: 2rem;
 }
