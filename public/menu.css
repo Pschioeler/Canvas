@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    width: 100vw;
+    height: min-content;
+    background-color: #212121;
+    padding: 0.4em 0.8em;
+    color: white;
+    border-bottom: 2px solid black;
+}
+header nav {
+    display: grid;
+    grid-template-columns: 1.5fr 8fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+}
+
+#navIcons {
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav input {
+    font-size: 25px;
+    width: 400px;
+    padding: 0 0.4em;
+    border-radius: 8px;
+}
+
+#sideMenu {
+    color: white;
+    font-size: 16px;
+    width: min-content;
+    height: 100vh;
+    padding: 0.5em 0.8em;
+    border-right: 2px solid black;
+}
+#sideMenu i {
+    font-size: 30px;
+}
+#sideMenu li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3em 0;
+}
