@@ -9,11 +9,11 @@
 
     const label = document.createElement('label');
     const span = document.createElement('span');
-    span.className="span1"
+    span.className("span1")
     span.textContent = prompt('Enter subject name:');
-    label.appendChild(span);
 
     const fileList = document.createElement('ul');
+    fileList.className = "slide"
 
     const addFileButton = document.createElement('button');
     addFileButton.textContent = 'Add File';

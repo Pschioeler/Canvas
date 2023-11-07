@@ -81,14 +81,17 @@ h1,h2,h3,h4,h5,h6 {
 /*
  Studie css
 */
-
-
 .eksemple {
     width : 800px; 
     background: #d9d9d9;
     margin : 40px auto; 
-  }
+}
 
+.subject {
+    width : 800px; 
+    background: #211717;
+    margin : 40px auto; 
+}
   .span1 {
     padding : 30px;
     background : #2d2f31; 
