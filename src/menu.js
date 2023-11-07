@@ -1,4 +1,4 @@
-export function createMenu() {
+function createMenu() {
     const header = document.createElement("header");
     const nav = document.createElement("nav");
     const logo = document.createElement("logo");
@@ -42,3 +42,4 @@ export function createMenu() {
     document.body.appendChild(header);
     document.body.appendChild(aside);
 }
+createMenu();
