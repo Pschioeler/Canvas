@@ -18,19 +18,11 @@ function loadAssignmentsFromLocalStorage(x) {
 function $(id) {
     return document.getElementById(id);
 }
-let titleInput = $("assignmentTitle");
-let descInput = $("assignmentDesc");
-let dueInput = $("assignmentDue");
-let addAssignmentButton = $("addAssignment");
+
+let openForm = $("openForm");
 let assignmentWrapper = $("assignmentWrapper");
 
-addAssignmentButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    let title = titleInput.value;
-    let desc = descInput.value;
-    let due = dueInput.value;
-    addAssignment(title, desc, due);
-});
+openForm.addEventListener("click", showForm);
 
 function addAssignment(title, desc, due) {
     let a = new Assignment(title, desc, due);
@@ -41,10 +33,42 @@ function addAssignment(title, desc, due) {
     addAssignmentsToContainer(assignments);
 }
 
-// Function to create and add assignments to the container
+function showForm() {
+    const wrapper = $("assignmentWrapper");
+    wrapper.innerHTML = "";
+
+    const form = document.createElement("div");
+    form.classList.add("form");
+    form.innerHTML = `
+        <form id="assignmentForm">
+        <label for="title">Add Assignment Title</label>
+        <input id="assignmentTitle" name="title" type="text">
+        <label>Add Assignment Description</label>
+        <textarea id="assignmentDesc" rows="4" cols="50"></textarea>
+        <label for="date">Add Due Date</label>
+        <input id="assignmentDue" type="datetime-local">
+        <button id="addAssignment">Assign</button>
+        </form>
+    `;
+    wrapper.appendChild(form);
+
+    let titleInput = $("assignmentTitle");
+    let descInput = $("assignmentDesc");
+    let dueInput = $("assignmentDue");
+    let addAssignmentButton = $("addAssignment");
+
+    addAssignmentButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        let title = titleInput.value;
+        let desc = descInput.value;
+        let due = dueInput.value;
+        addAssignment(title, desc, due);
+    });
+}
+
 function addAssignmentsToContainer(assignments) {
-    const container = document.getElementById('assignmentWrapper');
-    container.innerHTML = '';
+    const container = $("assignmentWrapper");
+    container.innerHTML = "";
 
     assignments.forEach((assignmentData, index) => {
         const assignmentElement = document.createElement('div');
@@ -53,14 +77,13 @@ function addAssignmentsToContainer(assignments) {
             <h2 class="title">${assignmentData.title}</h2>
             <p class="description">${assignmentData.description}</p>
             <p class="due-date">Due Date: ${assignmentData.dueDate}</p>
-            <button class="upload-solution-button" data-index="${index}">Upload Solution</button>
+            <button class="uploadButton" data-index="${index}">Upload Solution</button>
         `;
-
         container.appendChild(assignmentElement);
     });
 
     // Add event listeners to the "Upload Solution" buttons
-    const uploadButtons = document.querySelectorAll('.upload-solution-button');
+    const uploadButtons = document.querySelectorAll('.uploadButton');
     uploadButtons.forEach(button => {
         button.addEventListener('click', openUploadDialog);
     });
