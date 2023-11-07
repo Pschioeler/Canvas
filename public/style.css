@@ -36,7 +36,7 @@ body{
     margin : 40px auto; 
   }
 
-  span {
+  .span1 {
     padding : 30px;
     background : #2d2f31; 
     color : white;
@@ -46,7 +46,7 @@ body{
     display: block;
   }
   
-  span::after {
+  .span1::after {
     float: right;
     right: 10%;
     content: "+";

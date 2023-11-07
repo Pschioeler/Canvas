@@ -1,13 +1,17 @@
    // Function to create a new subject with a checkbox, file list, and buttons
    function createSubject() {
-    const subjectContainer = document.createElement('div');
-    subjectContainer.className = 'subject';
-
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
+    const subjectContainer = document.createElement("div");
+    subjectContainer.className = "subject";
+    
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.id = "touch";
 
     const label = document.createElement('label');
-    label.textContent = prompt('Enter subject name:');
+    const span = document.createElement('span');
+    span.className="span1"
+    span.textContent = prompt('Enter subject name:');
+    label.appendChild(span);
 
     const fileList = document.createElement('ul');
 
