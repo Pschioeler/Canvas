@@ -5,15 +5,16 @@
     
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.id = "touch";
+    checkbox.className = "touch";
 
     const label = document.createElement('label');
     const span = document.createElement('span');
-    span.className("span1")
+    span.className = "span1"
     span.textContent = prompt('Enter subject name:');
+    label.appendChild(span);
 
     const fileList = document.createElement('ul');
-    fileList.className = "slide"
+    fileList.className = "slide";
 
     const addFileButton = document.createElement('button');
     addFileButton.textContent = 'Add File';
