@@ -1,0 +1,19 @@
+* {
+
+}
+
+:root,
+    :root.default {
+        --primary-color: #FF8E3D;
+        --secondary-color: #181818;
+        --tertiary-color: #212121;
+        --bg-color: #181818;
+        --secondary-bg-color: #212121;
+        --highlight-color: #4096FB;
+        --text-color: aliceblue;
+        --hover: #ec1800;
+}
+
+body{
+    background-color:   var(--bg-color) ;
+}
