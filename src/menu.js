@@ -1,4 +1,5 @@
 function createMenu() {
+    const body = document.body;
     const header = document.createElement("header");
     const nav = document.createElement("nav");
     const logo = document.createElement("logo");
@@ -39,7 +40,7 @@ function createMenu() {
   
     aside.appendChild(ul);
   
-    document.body.appendChild(header);
-    document.body.appendChild(aside);
+    body.insertBefore(aside, body.firstChild);
+    body.insertBefore(header, body.firstChild);
 }
 createMenu();
