@@ -64,3 +64,88 @@ body{
   #touch {position: absolute; opacity: 0; height: 0px;}    
   
   #touch:checked + .slide {height: 300px;} 
+
+
+
+
+    /* Style for notification boxes */
+    .notification-box {
+      border: 1px solid #858a91;
+      margin: 10px;
+      padding: 10px;
+      background-color: #3D3D3D;
+      border-radius: 20px;
+      width: 50%;
+  }
+  .notification-box p {
+      margin-top: 1rem;
+      color: white;
+  }
+  .notification-head{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+  }
+  .notification-head h1{
+      margin-left: 1rem;
+  }
+  .notification-head h1,
+  .notification-box h3{
+      color: white;
+  }
+  .notification-head img{
+      margin-left:-2rem;
+  }
+
+  /* Style for the "Læs mere" button */
+  .read-more-button,
+  #add-notification{
+      background-color: #FF8E3D;
+      color: #fff;
+      border: none;
+      padding: 5px 15px;
+      cursor: pointer;
+      border-radius: 40px;
+      margin-top: 1rem;
+  }
+  .removeIcon{
+      width: 3%;
+      float: right;
+      margin-top: 0.5rem;
+      margin-right: 0.5rem;
+
+  }
+
+    /* Style for profile page */
+
+  .profile-container{
+    background-color: #3D3D3D;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 4rem;
+    border-radius: 20px;
+    padding: 20px;
+}
+.edit-button{
+    float: right;
+    width: 4%;
+    margin-right: 1rem;
+}
+.profile-image{
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+.profile-info-img{
+    display: flex;
+    align-items: center;
+}
+.profile-info-img h2{
+    margin-left: 2rem;
+     margin-top: 2rem;
+     color: white;
+}
+.profile-info{
+    margin-top: 2rem;
+    margin-right: 1;
+    margin-left: 3rem;
+    color: white;
+}
