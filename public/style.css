@@ -199,7 +199,7 @@ button:hover {
   }
 
   .dropdown-content .item a {
-    color: black;
+    color: white;
     text-decoration: none;
     flex-grow: 1;
     margin-right: 10px;
