@@ -18,6 +18,7 @@
         --highlight-color: #4096FB;
         --text-color: aliceblue;
         --button-hover: rgb(213, 89, 0);
+        --red: #ff0000;
 }
 
 a {text-decoration : none; color : var(--primary-color);}
@@ -114,7 +115,7 @@ button:hover {
 }
 
 .studie-button:hover {
-    background-color: var(--hover);
+    background-color: var(--red);
     transition: ease-in-out 0.2s;
 }
 
@@ -162,11 +163,12 @@ button:hover {
     font-family: Arial, Helvetica, sans-serif;
     font-size : 1em;
     border: none;
+    border-radius: 0;
     border-left: 2px solid var(--primary-color);
     transition: ease-in-out 0.2s;
   }
   .addFileBtn:hover {
-    background-color: var(--hover);
+    background-color: var(--red);
     transition: ease-in-out 0.2s;
   }
 
@@ -208,7 +210,7 @@ button:hover {
   }
 
   .dropdown-content .item .remove-button {
-    background-color: var(--hover);
+    background-color: var(--red);
     color: white;
     border: none;
     border-radius: 5px;
@@ -218,7 +220,7 @@ button:hover {
   }
 
   .dropdown-content .item .remove-button:hover {
-    background-color: var(--hover);
+    background-color: var(--button-hover);
     border-radius: 40px;
     font-weight: bold;
   }
