@@ -7,35 +7,53 @@
     <link rel="stylesheet" href="style.css">
     <script async src="../notification.js"></script>
 
-    
 </head>
 <body>
+
+        
+    
+
+     <!-- Add a button to trigger the viewNotifications function -->
+     <img src="../assets/img/bell.webp" id="view-notifications-button" alt="">
+
+     <!-- Popup container for notifications -->
+     <div id="popup" class="popup-container">
+         <div class="popup-box">
+            <img src="../assets/img/remove-svgrepo.webp" id="close-popup-button" alt="">
+             <h3>Notifikationer</h3>
+             <div id="latest-notifications">
+             </div>
+            <a class="see-all-button" href="../public/notifikationer.html">Se alle</a>           
+         </div>
+     </div>
+ 
+
     
     <div id="notification-container">
         <div class="notification-head">
          <h2>Notifikationer</h2>
-        <img src="../assets/img/settings-svgrepoa.svg" alt="">
+        <img src="../assets/img/settings-svgrepoa.webp" alt="">
         </div>
      
         <div class="notification-box">
-            <img class="removeIcon" src="../assets/img/remove-svgrepo.svg" alt="Knap til at fjerne notification">
+            <img class="removeIcon" src="../assets/img/remove-svgrepo.webp" alt="Knap til at fjerne notification">
             <h3>lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
             <button class="read-more-button">Læs mere</button>
         </div>
 
         <div class="notification-box">
-            <img class="removeIcon" src="../assets/img/remove-svgrepo.svg" alt="Knap til at fjerne notification">
+            <img class="removeIcon" src="../assets/img/remove-svgrepo.webp" alt="Knap til at fjerne notification">
             <h3>lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
             <button class="read-more-button">Læs mere</button>
         </div>
 
        
         <div class="notification-box">
-            <img class="removeIcon" src="../assets/img/remove-svgrepo.svg" alt="Knap til at fjerne notification">
+            <img class="removeIcon" src="../assets/img/remove-svgrepo.webp" alt="Knap til at fjerne notification">
             <h3>lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <button class="read-more-button">Læs mere</button>
         </div>
 
@@ -43,7 +61,6 @@
     </div>
 
     <button id="add-notification">Add Notification</button>
-
 
 
     
