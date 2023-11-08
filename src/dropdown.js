@@ -9,6 +9,7 @@
     container.onclick = function() { toggleDropdown(this); };
 
     const span = document.createElement("span");
+    span.className = "dropdownName";
     span.textContent = dropdownName;
     container.appendChild(span);
 
@@ -24,6 +25,7 @@
 
     // Button to add files to the dropdown
     const addButton = document.createElement("button");
+    addButton.className = "addFileBtn"
     addButton.textContent = "Add File";
     addButton.onclick = function() {
       fileInput.click();
@@ -36,6 +38,15 @@
   // JavaScript function to toggle the dropdown
   function toggleDropdown(dropdown) {
     dropdown.classList.toggle("active");
+    if (document.getElementById("dropdown").classList.contains('active')) {
+        // Calculate the height of the dropdown
+        let dropdownHeight = document.getElementById("dropdown active").offsetHeight;
+        // Use the height to push down the content
+        contentElement.style.transform = `translateY(${dropdownHeight}px)`;
+      } else {
+        // Reset the content position
+        contentElement.style.transform = 'translateY(0px)';
+      }
   }
 
   // JavaScript function to add a file to the dropdown list
