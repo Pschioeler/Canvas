@@ -17,7 +17,7 @@
         --tertiary-bg-color: #494949;
         --highlight-color: #4096FB;
         --text-color: aliceblue;
-        --hover: #ec1800;
+        --button-hover: rgb(213, 89, 0);
 }
 
 a {text-decoration : none; color : var(--primary-color);}
@@ -30,6 +30,19 @@ body{
 }
 h1,h2,h3,h4,h5,h6 {
     font-weight: 600;
+}
+button {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    padding: 0.6rem;
+    font-size: 1rem;
+    
+}
+button:hover {
+    background-color: var(--button-hover);
+    cursor: pointer;
+    transition: 0.25s;
 }
 
 .dark {
@@ -263,4 +276,45 @@ h1,h2,h3,h4,h5,h6 {
 }
 #view-notifications-button{
     width: 2%;
+}
+/* Style for assignments*/
+#assignmentWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: space-evenly;
+}
+.assignment, .archiveAssignment {
+    background-color: var(--tertiary-color);
+    padding: 1rem;
+    border-radius: 15px;
+    
+}
+.assignment {
+    width: 30%;
+}
+.assignmentDescription {
+    margin: 1rem 0 1rem 0;
+}
+.dueDate {
+    margin-bottom: 1rem;
+}
+#openForm {
+    background-color: var(--highlight-color);
+    margin: 1rem 0 2rem 0;
+}
+#openForm:hover {
+    background-color: #005bc4;
+}
+.archiveAssignment{
+    margin-bottom: 1rem;
+}
+.archiveAssignment > p, .archiveAssignment > h3 {
+    color: var(--tertiary-bg-color);
+}
+.archiveAssignment:first-child {
+    margin-top: 1rem;
+}
+#prevA {
+    margin: 1rem 0 1rem 0;
 }

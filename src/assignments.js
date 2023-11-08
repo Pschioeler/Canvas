@@ -5,13 +5,29 @@ class Assignment {
         this.dueDate = dueDate;
     }
 }
-// Check if assignments exist in local storage and load them if yes, initialize and empty array if not
-let assignments = loadAssignmentsFromLocalStorage("assignments");
-let assignmentArchive = loadAssignmentsFromLocalStorage("assignmentArchive");
 
-function loadAssignmentsFromLocalStorage(x) {
+// Check if assignments exist in local storage and load them if yes, initialize an empty array if not
+function loadAssignmentsFromLocalStorage(x) { 
     const storedAssignments = localStorage.getItem(x);
-    return storedAssignments ? JSON.parse(storedAssignments) : [];
+    const assignments = storedAssignments ? JSON.parse(storedAssignments) : [];
+    return assignments;
+}
+//Dynamically checks if there is assignments due or previously and displays a message accordingly
+function updateAssignmentMessages() {
+    let assignmentError = $("assignmentError");
+    let archiveError = $("archiveError");
+    
+    if (assignments.length === 0) {
+        assignmentError.innerHTML = "No due assignments";
+    } else {
+        assignmentError.innerHTML = "";
+    }
+    
+    if (assignmentArchive.length === 0) {
+        archiveError.innerHTML = "No previous assignments";
+    } else {
+        archiveError.innerHTML = "";
+    }
 }
 
 //Function to quickly grab elements from HTML
@@ -19,22 +35,23 @@ function $(id) {
     return document.getElementById(id);
 }
 
-let openForm = $("openForm");
+let assignments = loadAssignmentsFromLocalStorage("assignments");
+let assignmentArchive = loadAssignmentsFromLocalStorage("assignmentArchive");
 let assignmentWrapper = $("assignmentWrapper");
-
+let openForm = $("openForm");
 openForm.addEventListener("click", showForm);
+updateAssignmentMessages();
 
 function addAssignment(title, desc, due) {
     let a = new Assignment(title, desc, due);
     assignments.push(a);
-    // Save assignments and assignmentArchive to local storage
     saveDataToLocalStorage();
-    // Update the assignments displayed on the page
     addAssignmentsToContainer(assignments);
+    updateAssignmentMessages();
 }
 
 function showForm() {
-    const wrapper = $("assignmentWrapper");
+    const wrapper = $("formWrapper");
     wrapper.innerHTML = "";
 
     const form = document.createElement("div");
@@ -63,6 +80,7 @@ function showForm() {
         let desc = descInput.value;
         let due = dueInput.value;
         addAssignment(title, desc, due);
+        form.remove();
     });
 }
 
@@ -74,9 +92,9 @@ function addAssignmentsToContainer(assignments) {
         const assignmentElement = document.createElement('div');
         assignmentElement.classList.add('assignment');
         assignmentElement.innerHTML = `
-            <h2 class="title">${assignmentData.title}</h2>
-            <p class="description">${assignmentData.description}</p>
-            <p class="due-date">Due Date: ${assignmentData.dueDate}</p>
+            <h2 class="assignmentTitle">${assignmentData.title}</h2>
+            <p class="assignmentDescription">${assignmentData.description}</p>
+            <p class="dueDate">Due Date: ${assignmentData.dueDate}</p>
             <button class="uploadButton" data-index="${index}">Upload Solution</button>
         `;
         container.appendChild(assignmentElement);
@@ -129,8 +147,8 @@ function openUploadDialog(event) {
         // Remove the assignment from the assignments array
         assignments.splice(index, 1);
 
-        // Close the dialog
         dialog.remove();
+        archiveError.innerHTML ="";
 
         // Save assignmentArchive and updated assignments to local storage
         saveDataToLocalStorage();
@@ -138,6 +156,7 @@ function openUploadDialog(event) {
         // Update the assignments displayed on the page
         addAssignmentsToContainer(assignments);
         displayArchivedAssignments();
+        updateAssignmentMessages();
     });
 }
 function displayArchivedAssignments() {
@@ -146,10 +165,10 @@ function displayArchivedAssignments() {
 
     assignmentArchive.forEach((archiveData, index) => {
         const archiveElement = document.createElement('div');
-        archiveElement.classList.add('archive-assignment');
+        archiveElement.classList.add('archiveAssignment');
         archiveElement.innerHTML = `
-            <h3>${archiveData.assignment.title}</h3>
-            <p>${archiveData.assignment.description}</p>
+            <h3 class="archiveTitle">${archiveData.assignment.title}</h3>
+            <p class="archiveDescription">${archiveData.assignment.description}</p>
             <p>File Name: ${archiveData.solutionFileName}</p>
         `;
 
@@ -162,8 +181,6 @@ function saveDataToLocalStorage() {
     localStorage.setItem('assignments', JSON.stringify(assignments));
     localStorage.setItem('assignmentArchive', JSON.stringify(assignmentArchive));
 }
-
-
 
 // Initial loading of assignments from local storage
 addAssignmentsToContainer(assignments);
