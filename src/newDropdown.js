@@ -79,8 +79,6 @@ function addFileToDropdown(fileInput, newDropdown) {
   // download the file
   function downloadFile(element) {
     const fileName = element.getAttribute("title");
-    // You can provide a download link or use Blob URL to initiate the download
-    // For simplicity, we'll create a data URL and trigger a download
     const dataURL = "data:application/octet-stream," + encodeURIComponent("Sample file content");
     const downloadLink = document.createElement("a");
     downloadLink.href = dataURL;
