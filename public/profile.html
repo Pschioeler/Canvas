@@ -5,15 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-   
-    </style>
+    <script async src="../notification.js"></script>
 </head>
 <body>
+
+ 
+     <!-- Add a button to trigger the viewNotifications function -->
+     <img src="../assets/img/bell.webp" id="view-notifications-button" alt="">
+
+     <!-- Popup container for notifications -->
+     <div id="popup" class="popup-container">
+         <div class="popup-box">
+            <img src="../assets/img/remove-svgrepo.webp" id="close-popup-button" alt="">
+             <h3>Notifikationer</h3>
+             <div id="latest-notifications">
+             </div>
+            <a class="see-all-button" href="../public/notifikationer.html">Se alle</a>           
+         </div>
+     </div>
+ 
     <div class="profile-container">
-            <img class="edit-button" src="../assets/img/editprofile.png" alt="">
+            <img class="edit-button" src="../assets/img/edit-2-svgrepo.webp" alt="">
         <div class="profile-info-img">
-            <img class="profile-image" src="../assets/img/users.png" alt="Profile Image">
+            <img class="profile-image" src="../assets/img/user-round-svgrepo.webp" alt="Profile Image">
             <h2>Fornavn Efternavn</h2>
             </div>
         <div class="profile-info">
@@ -26,5 +40,38 @@
         </div>
          
     </div>
+
+ 
+    <script>
+        // Function to display the popup with latest notifications
+        function viewNotifications() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'block';
+    
+            // Get the latest notifications from the shared data source and append them to the popup
+            const latestNotifications = document.getElementById('latest-notifications');
+            latestNotifications.innerHTML = ''; // Clear previous content
+    
+            // Replace this with your actual logic to fetch notifications from the shared data source.
+            const notifications = getNotificationsFromSharedSource();
+    
+            for (const notification of notifications) {
+                const notificationBox = createNotificationBox(notification);
+                latestNotifications.appendChild(notificationBox);
+            }
+        }
+    
+        // Function to close the popup
+        function closePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'none';
+        }
+    
+        // Add click event listeners
+        document.getElementById('view-notifications-button').addEventListener('click', viewNotifications);
+        document.getElementById('close-popup-button').addEventListener('click', closePopup);
+    
+        // You may need to define the functions getNotificationsFromSharedSource and createNotificationBox.
+    </script>
 </body>
 </html>

@@ -137,21 +137,22 @@ h1,h2,h3,h4,h5,h6 {
   }
   .notification-box p {
       margin-top: 1rem;
-      color: white;
   }
   .notification-head{
       display: grid;
       grid-template-columns: 1fr 1fr;
   }
-  .notification-head h1{
+  .notification-head h2{
       margin-left: 1rem;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+      font-size: 35px;
   }
-  .notification-head h1,
-  .notification-box h3{
-      color: white;
-  }
+
   .notification-head img{
-      margin-left:-2rem;
+    margin-left: -3rem;
+    margin-top: 2rem;
+    width: 6%;
   }
 
   /* Style for the "Læs mere" button */
@@ -164,6 +165,19 @@ h1,h2,h3,h4,h5,h6 {
       cursor: pointer;
       border-radius: 40px;
       margin-top: 1rem;
+      font-size: 15px;
+  }
+  .see-all-button{
+    background-color: #FF8E3D;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 40px;
+
+    font-size: 15px;
+    position: relative;
+  top: 20px;
   }
   .removeIcon{
       width: 3%;
@@ -187,10 +201,12 @@ h1,h2,h3,h4,h5,h6 {
     float: right;
     width: 4%;
     margin-right: 1rem;
+    margin-top: 2rem;
 }
 .profile-image{
     margin-top: 2rem;
     margin-left: 2rem;
+    width: 15%;
 }
 .profile-info-img{
     display: flex;
@@ -206,4 +222,45 @@ h1,h2,h3,h4,h5,h6 {
     margin-right: 1;
     margin-left: 3rem;
     color: white;
+}
+.profile-info p{
+    padding: 10px;
+}
+
+   /* CSS for the popup box */
+   .popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-box {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 5px;
+    width: 25%;
+    margin: 0 auto;
+    height: 630px;
+}
+.popup-box h3{
+    margin-top: 0.5rem;
+}
+#latest-notifications{
+    width: 190%;
+    max-height: 500px; /* Adjust the max height as needed */
+    overflow-y: scroll;
+}
+#close-popup-button{
+    width: 10%;
+    float: right;
+}
+#view-notifications-button{
+    width: 2%;
 }
