@@ -9,8 +9,7 @@ class Assignment {
 // Check if assignments exist in local storage and load them if yes, initialize an empty array if not
 function loadAssignmentsFromLocalStorage(x) { 
     const storedAssignments = localStorage.getItem(x);
-    const assignments = storedAssignments ? JSON.parse(storedAssignments) : [];
-    return assignments;
+    return storedAssignments ? JSON.parse(storedAssignments) : [];
 }
 //Dynamically checks if there is assignments due or previously and displays a message accordingly
 function updateAssignmentMessages() {
@@ -18,13 +17,13 @@ function updateAssignmentMessages() {
     let archiveError = $("archiveError");
     
     if (assignments.length === 0) {
-        assignmentError.innerHTML = "No due assignments";
+        assignmentError.innerHTML = "No due assignments.";
     } else {
         assignmentError.innerHTML = "";
     }
     
     if (assignmentArchive.length === 0) {
-        archiveError.innerHTML = "No previous assignments";
+        archiveError.innerHTML = "No previous assignments.";
     } else {
         archiveError.innerHTML = "";
     }
@@ -38,8 +37,9 @@ function $(id) {
 let assignments = loadAssignmentsFromLocalStorage("assignments");
 let assignmentArchive = loadAssignmentsFromLocalStorage("assignmentArchive");
 let assignmentWrapper = $("assignmentWrapper");
-let openForm = $("openForm");
-openForm.addEventListener("click", showForm);
+let viewForm = $("openForm");
+viewForm.addEventListener("click", showForm);
+
 updateAssignmentMessages();
 
 function addAssignment(title, desc, due) {
@@ -87,7 +87,7 @@ function showForm() {
 function addAssignmentsToContainer(assignments) {
     const container = $("assignmentWrapper");
     container.innerHTML = "";
-
+    
     assignments.forEach((assignmentData, index) => {
         const assignmentElement = document.createElement('div');
         assignmentElement.classList.add('assignment');
@@ -104,7 +104,7 @@ function addAssignmentsToContainer(assignments) {
     const uploadButtons = document.querySelectorAll('.uploadButton');
     uploadButtons.forEach(button => {
         button.addEventListener('click', openUploadDialog);
-    });
+    });   
 }
 
 function openUploadDialog(event) {
@@ -161,7 +161,7 @@ function openUploadDialog(event) {
 }
 function displayArchivedAssignments() {
     const archiveWrapper = document.getElementById('archiveWrapper');
-    archiveWrapper.innerHTML = ''; // Clear the contents of the archiveWrapper
+    archiveWrapper.innerHTML = ''; 
 
     assignmentArchive.forEach((archiveData, index) => {
         const archiveElement = document.createElement('div');
@@ -185,3 +185,5 @@ function saveDataToLocalStorage() {
 // Initial loading of assignments from local storage
 addAssignmentsToContainer(assignments);
 displayArchivedAssignments();
+
+export { Assignment, loadAssignmentsFromLocalStorage, updateAssignmentMessages, $, assignments };

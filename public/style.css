@@ -315,6 +315,12 @@ button:hover {
 .archiveAssignment:first-child {
     margin-top: 1rem;
 }
-#prevA {
+#prevA, #indexAssignments {
     margin: 1rem 0 1rem 0;
+}
+#viewAll  {
+    color: white;
+}
+.viewAll {
+    margin-top: 2rem;
 }
