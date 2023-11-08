@@ -81,6 +81,18 @@ h1,h2,h3,h4,h5,h6 {
 /*
  Studie css
 */
+.subject-header {
+    width : 800px; 
+    background: red;
+    margin : 40px auto; 
+}
+
+.subject-content {
+    width : 800px; 
+    background: magenta;
+    margin : 40px auto; 
+}
+
 .eksemple {
     width : 800px; 
     background: #d9d9d9;
@@ -123,6 +135,58 @@ h1,h2,h3,h4,h5,h6 {
   
   #touch:checked + .slide {height: 300px;} 
 
+
+   /* CSS for the dropdown */
+.studie-btn {
+    
+}
+
+   .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+  }
+
+  .dropdown-content .item a {
+    color: black;
+    text-decoration: none;
+    flex-grow: 1;
+    margin-right: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .dropdown-content .item .remove-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .dropdown-content .item .remove-button:hover {
+    background-color: #d32f2f;
+  }
 
 
 

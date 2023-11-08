@@ -1,4 +1,24 @@
-   // Function to create a new subject with a checkbox, file list, and buttons
+  function CreateSubject() {
+    const subjectHeaderContainer = document.createElement("div");
+    subjectHeaderContainer.className = "subject-header";
+
+    const subjectContentContainer = document.createElement("div");
+    subjectContentContainer.className = "subject-content";
+
+    console.log("success");
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  // Function to create a new subject with a checkbox, file list, and buttons
    function createSubject() {
     const subjectContainer = document.createElement("div");
     subjectContainer.className = "subject";
@@ -55,6 +75,12 @@
     document.body.appendChild(subjectContainer);
   }
 
+
   document.getElementById('addSubjectButton').addEventListener('click', () => {
     createSubject();
+  });
+
+
+  document.getElementById('CreateSubjectBtn').addEventListener('click', () => {
+    CreateSubject();
   });
