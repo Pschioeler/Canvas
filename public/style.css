@@ -368,6 +368,7 @@ button:hover {
 #view-notifications-button{
     width: 2%;
 }
+
 /* Style for assignments*/
 #assignmentWrapper {
     display: flex;
@@ -414,4 +415,8 @@ button:hover {
 }
 .viewAll {
     margin-top: 2rem;
+
 }
+
+#imageInput{
+    display: none; }

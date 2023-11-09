@@ -61,3 +61,22 @@ document.getElementById('add-notification').addEventListener('click', addNotific
 document.getElementById('view-notifications-button').addEventListener('click', viewNotifications);
 document.getElementById('close-popup-button').addEventListener('click', closePopup);
 
+function previewProfileImage(input) {
+    const preview = document.getElementById('previewImage');
+    const file = input.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            preview.src = e.target.result;
+        };
+
+        reader.readAsDataURL(file);
+    }
+}
+
+// Trigger the file input click when the edit button is clicked
+document.querySelector('.edit-button').addEventListener('click', function () {
+    document.getElementById('imageInput').click();
+});

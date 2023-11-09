@@ -23,13 +23,16 @@
             <a class="see-all-button" href="../public/notifikationer.html">Se alle</a>           
          </div>
      </div>
- 
-    <div class="profile-container">
-            <img class="edit-button" src="../assets/img/edit-2-svgrepo.webp" alt="">
+
+     
+     <div class="profile-container">
+        <label for="imageInput" class="">
+            <img class="edit-button" src="../assets/img/edit-2-svgrepo.webp" alt="Edit Profile Image">
+        </label>
         <div class="profile-info-img">
-            <img class="profile-image" src="../assets/img/user-round-svgrepo.webp" alt="Profile Image">
+            <img id="previewImage" class="profile-image" src="../assets/img/user-round-svgrepo.webp" alt="Profile Image">
             <h2>Fornavn Efternavn</h2>
-            </div>
+        </div>
         <div class="profile-info">
             <h3>Om</h3>
             <p>Email: user@example.com</p>
@@ -38,8 +41,9 @@
             <p>Modtag sms fra UMS: Ja</p>
             <button class="read-more-button">Se studiekort</button>
         </div>
-         
     </div>
+    
+    <input type="file" id="imageInput" accept="image/*" onchange="previewProfileImage(this)">
 
  
     <script>
