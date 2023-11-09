@@ -21,6 +21,8 @@ function createMenu() {
     input.placeholder = "Search...";
     const div = document.createElement("div");
     div.id = "navIcons";
+    const notification = document.createElement("a");
+    notification.href = "notifikationer.html";
     const i1 = document.createElement("i");
     i1.className = "fas fa-bell";
     const i2 = document.createElement("i");
@@ -30,7 +32,8 @@ function createMenu() {
     nav.appendChild(a);
     nav.appendChild(input);
     nav.appendChild(div);
-    div.appendChild(i1);
+    div.appendChild(notification)
+    notification.appendChild(i1);
     div.appendChild(i2);
     header.appendChild(nav);
   
@@ -66,7 +69,7 @@ function createMenu() {
                     dropdownToggle.className = "dropdown-toggle";
                     dropdownToggle.textContent = `Semester ${semester}`;
                     const subNavItem = document.createElement("ul");
-                    subNavItem.className = "dropdown-content";
+                    subNavItem.className = "dropdown-content2";
 
                     if (semester === 1) {
                         // Original content for "Semester 1"
