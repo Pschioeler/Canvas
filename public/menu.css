@@ -6,6 +6,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    overflow: hidden;
+}
+
 header {
     width: 100vw;
     height: min-content;
@@ -36,6 +40,7 @@ header nav input {
 
 #sideMenu {
     position: fixed;
+    position: relative;
     left: 0;
     width: min-content;
     height: 100vh;
@@ -47,9 +52,53 @@ header nav input {
 #sideMenu i {
     font-size: 30px;
 }
-#sideMenu li {
+#sideMenu > ul > li {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 3em 0;
 }
+
+.subNav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 250px;
+    background-color: #494949;
+    position: absolute;
+    right: -253px;
+    top: 2px;
+}
+
+.subNav a, .subNav {
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+
+.subNav:hover {
+    cursor: default;
+}
+
+#sideMenu li:hover {
+    cursor: pointer;
+}
+
+.dropdown-toggle {
+    color: white;
+    background-color: #3D3D3D;
+    width: 100%;
+    font-size: 25px;
+    margin-bottom: 5px;
+    padding: 8px;
+}
+.dropdown-toggle:hover, .subNav a:hover {
+    cursor: pointer;
+    color:rgb(213, 89, 0)
+}
+
+.dropdown-content {
+    margin-bottom: 20px;
+}
+
