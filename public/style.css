@@ -432,7 +432,7 @@ header {
     grid-column: 1 / span 2;
     width: 100vw;
     height: min-content;
-    background-color: #212121;
+    background-color: var(--tertiary-color);
     padding: 0.4em 0.8em;
     color: white;
     border-bottom: 2px solid black;
@@ -486,7 +486,7 @@ header nav input {
     align-items: center;
     height: 100%;
     width: 250px;
-    background-color: #494949;
+    background-color: var(--tertiary-bg-color);
     position: absolute;
     right: -253px;
     top: 2px;
@@ -508,7 +508,7 @@ header nav input {
 
 .dropdown-toggle {
     color: white;
-    background-color: #3D3D3D;
+    background-color: var(--secondary-bg-color);
     width: 100%;
     font-size: 25px;
     margin-bottom: 5px;
@@ -516,7 +516,7 @@ header nav input {
 }
 .dropdown-toggle:hover, .subNav a:hover {
     cursor: pointer;
-    color:rgb(213, 89, 0)
+    color:var(--button-hover);
 }
 
 .dropdown-content2 {

@@ -42,7 +42,7 @@ function createMenu() {
     const ul = document.createElement("ul");
     ul.style.listStyleType = "none";
     const menuItems = [
-        { name: "Home", iconName: "fa-home", hasSubNav: false },
+        { name: "Dashboard", iconName: "fa-home", hasSubNav: false },
         { name: "Studies", iconName: "fa-book-open", hasSubNav: true },
         { name: "Calendar", iconName: "fa-calendar", hasSubNav: false },
         { name: "Resources", iconName: "fa-question", hasSubNav: true },
