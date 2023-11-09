@@ -5,6 +5,7 @@
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
+    list-style-type: none;
 }
 
 :root,
@@ -25,6 +26,16 @@ a {text-decoration : none; color : var(--primary-color);}
 
 body{
     background-color:  var(--bg-color) ;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
+
+    overflow: hidden;
+}
+
+main {
+    grid-row: 2;
+    grid-column: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -414,4 +425,100 @@ button:hover {
 }
 .viewAll {
     margin-top: 2rem;
+}
+
+header {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    width: 100vw;
+    height: min-content;
+    background-color: #212121;
+    padding: 0.4em 0.8em;
+    color: white;
+    border-bottom: 2px solid black;
+}
+header nav {
+    display: grid;
+    grid-template-columns: 1.5fr 8fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+}
+
+#navIcons {
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav input {
+    font-size: 25px;
+    width: 400px;
+    padding: 0 0.4em;
+    border-radius: 8px;
+}
+
+#sideMenu {
+    grid-row: 2;
+    grid-column: 1;
+    position: fixed;
+    position: relative;
+    left: 0;
+    width: min-content;
+    height: 100vh;
+    color: white;
+    font-size: 16px;
+    padding: 0.5em 0.8em;
+    border-right: 2px solid black;
+}
+#sideMenu i {
+    font-size: 30px;
+}
+#sideMenu > ul > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3em 0;
+}
+
+.subNav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 250px;
+    background-color: #494949;
+    position: absolute;
+    right: -253px;
+    top: 2px;
+}
+
+.subNav a, .subNav {
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+
+.subNav:hover {
+    cursor: default;
+}
+
+#sideMenu li:hover {
+    cursor: pointer;
+}
+
+.dropdown-toggle {
+    color: white;
+    background-color: #3D3D3D;
+    width: 100%;
+    font-size: 25px;
+    margin-bottom: 5px;
+    padding: 8px;
+}
+.dropdown-toggle:hover, .subNav a:hover {
+    cursor: pointer;
+    color:rgb(213, 89, 0)
+}
+
+.dropdown-content2 {
+    margin-bottom: 20px;
 }
