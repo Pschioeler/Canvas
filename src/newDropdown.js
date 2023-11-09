@@ -30,10 +30,7 @@ function createDropdown2() {
 
     addFileButton.addEventListener('click', function() {
         fileInput.click();
-    });
-
-    // Append the new dropbox to the container
-    //dropdownContainer.appendChild(newDropdown);    
+    });   
 }
 
 
@@ -63,17 +60,6 @@ function addFileToDropdown(fileInput, newDropdown) {
   // toggle the dropdown
   function toggleDropdown(dropdown) {
     dropdown.classList.toggle("active");
-
-    /*
-    // Find the dropdown-content element inside the newDropdown
-    const ddContent = dropdown.querySelector('.dropdown-content');
-
-    if(dropdown.classList.contains("active")) {
-      ddContent.classList.add("active");
-    } else {
-        ddContent.classList.remove("active");
-    }
-*/
   }
 
   // download the file
